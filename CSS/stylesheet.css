@@ -1,5 +1,7 @@
 
-
+body{
+    margin: 0;
+}
 
 :root {
     --ivory: #FFFFF2;
@@ -46,6 +48,11 @@ header{
     background-color: #008FAC;
 }
 
+#header_img{
+    width: 150px;
+    height: auto;
+}
+
 
 /*****************
     Login page
@@ -61,6 +68,6 @@ header{
 #loginForm > input{
     height: 20px;
     width: 200px;
-    
+
 }
 

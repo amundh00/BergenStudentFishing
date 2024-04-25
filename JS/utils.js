@@ -34,7 +34,4 @@ function showLogoutButton() {
     accountDiv.appendChild(logoutButton);
 }
 
-
-
-
 console.log('Local Storage:', localStorage.getItem('accessToken'));
