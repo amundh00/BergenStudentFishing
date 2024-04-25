@@ -26,12 +26,12 @@ function authenticateUser(email, password) {
     })
     .then(responseData => {
         const accessToken = responseData.data.accessToken;
+        const userName = responseData.data.name
     
-        console.log('API Key:', accessToken); 
+        console.log('Access Token:', accessToken); 
     
-        localStorage.setItem('apiKey', accessToken);
-    
-        console.log('Local Storage:', localStorage.getItem('apiKey'));
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('userName', userName)
     
         console.log('Authentication successful');
         window.location.href = 'index.html';
@@ -41,4 +41,4 @@ function authenticateUser(email, password) {
     });
 }
 
-console.log('Local Storage:', localStorage.getItem('apiKey'));
+console.log('Local Storage:', localStorage.getItem('accessToken'));

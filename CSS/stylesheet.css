@@ -1,0 +1,66 @@
+
+
+
+:root {
+    --ivory: #FFFFF2;
+    --daintree: #012B39;
+    --bondiBlue: #008FAC;
+    --mountainMeadow: #19A288;
+  }
+  
+
+
+
+
+/*****************
+    CTA buttons
+*****************/
+
+.cta-button1{
+    border: solid var(--mountainMeadow) 2px;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    margin: 10px;
+    background-color: var(--mountainMeadow);
+}
+
+.cta-button1:hover{
+    border: solid var(--mountainMeadow) 2px;
+    color: var(--mountainMeadow);
+    background-color: transparent;
+}
+
+
+
+/*****************
+     Header
+*****************/
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #008FAC;
+}
+
+
+/*****************
+    Login page
+*****************/
+
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginForm > input{
+    height: 20px;
+    width: 200px;
+    
+}
+
