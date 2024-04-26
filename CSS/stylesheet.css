@@ -11,7 +11,9 @@ body{
   }
   
 
+h1{}
 
+p{}
 
 
 /*****************
@@ -32,8 +34,25 @@ body{
     border: solid var(--mountainMeadow) 2px;
     color: var(--mountainMeadow);
     background-color: transparent;
+    cursor: pointer;
 }
 
+.cta-button2{
+    border: solid var(--daintree) 2px;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    margin: 10px;
+    background-color: var(--daintree);
+}
+
+.cta-button2:hover{
+    border: solid var(--daintree) 2px;
+    color: var(--daintree);
+    background-color: transparent;
+    cursor: pointer;
+}
 
 
 /*****************
@@ -41,17 +60,56 @@ body{
 *****************/
 
 header{
+    background-color: #008FAC;
+    height: 100%;
+    padding: 10px;
+}
+
+header > div{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #008FAC;
+    margin: 0 40px 0 40px;
 }
 
 #header_img{
     width: 150px;
     height: auto;
 }
+
+
+/*****************
+      Index
+*****************/
+
+#posts{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+      
+}
+
+.singlePost{
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ivory);
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+    
+}
+
+.singlePost > img{
+    width: auto;
+    height: 200px;
+}
+
 
 
 /*****************
@@ -66,8 +124,11 @@ header{
 }
 
 #loginForm > input{
-    height: 20px;
+    height: 100%;
     width: 200px;
-
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--mountainMeadow) !important;
+    border: 0;
 }
 

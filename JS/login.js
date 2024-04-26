@@ -34,7 +34,7 @@ function authenticateUser(email, password) {
         localStorage.setItem('userName', userName)
     
         console.log('Authentication successful');
-        window.location.href = 'index.html';
+        window.location.href = '../html/index.html';
     })
     .catch(error => {
         console.error('Authentication error:', error);
