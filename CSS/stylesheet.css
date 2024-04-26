@@ -114,6 +114,26 @@ header > div{
 
 
 /*****************
+    Make post
+*****************/
+
+#lagPost{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#lagPost > input{
+    height: 100%;
+    width: 200px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--mountainMeadow) !important;
+    border: 0;
+}
+
+/*****************
     Login page
 *****************/
 

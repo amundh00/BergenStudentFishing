@@ -21,17 +21,24 @@
     </header>
    
     <main>
-        
+
         <form id="lagPost">
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title">
-            <label for="body">Text:</label>
-            <textarea id="body" name="body"></textarea>
-            <label for="imageUrl">Image URL:</label>
-            <input type="text" id="imageUrl" name="imageUrl">
-            <label for="altText">Alt Text:</label>
-            <input type="text" id="altText" name="altText">
-            <input type="submit" value="Submit">
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div>
+                <label for="body">Description:</label>
+                <textarea id="body" name="body" maxlength="1000"></textarea>
+                <div id="characterCount">0/1000</div>
+            </div>
+            <div>
+                <label for="imageUrl">Image URL:</label>
+                <input type="text" id="imageUrl" name="imageUrl">
+                <label for="altText">Alt Text:</label>
+                <input type="text" id="altText" name="altText">
+                <input type="submit" value="Submit" class="cta-button2">
+            </div>
         </form>
         
     </main>
