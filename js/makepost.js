@@ -50,12 +50,12 @@ const characterCount = document.getElementById('characterCount');
 
 bodyTextarea.addEventListener('input', function() {
     const textLength = this.value.length;
-    characterCount.textContent = `${textLength}/1000`;
+    characterCount.textContent = `${textLength}/2000`;
 
     if (textLength > 1000) {
         // Truncate the text if it exceeds the limit
-        this.value = this.value.slice(0, 1000);
-        characterCount.textContent = '1000/1000';
+        this.value = this.value.slice(0, 2000);
+        characterCount.textContent = '2000/2000';
     }
 });
 

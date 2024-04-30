@@ -85,11 +85,10 @@ header > div{
 
 #posts{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-      
 }
 
 .singlePost{
@@ -97,7 +96,7 @@ header > div{
     margin: 20px;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     color: black;
@@ -106,7 +105,11 @@ header > div{
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
 
-.singlePost > img{
+.singlePost > div{
+    margin: 20px;
+}
+
+.singlePost > div > img{
     width: auto;
     height: 200px;
 }

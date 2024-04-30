@@ -18,9 +18,13 @@ fetch('https://v2.api.noroff.dev/blog/posts/amund_halgunset')
                 postDiv.href = `blogpost.html?id=${id}`;
 
                 postDiv.innerHTML = `
+                <div class="postDetail">
                     <h2>${title}</h2>
-                    <p>${body}</p>
+                    <p>Les Mere</p>
+                </div>
+                <div class="postImg">
                     <img src="${mediaUrl}" alt="Post Image">
+                </div>
                 `;
 
                 const container = document.getElementById('posts');

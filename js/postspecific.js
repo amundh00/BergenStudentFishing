@@ -24,12 +24,16 @@ function fetchPostDetails(postId) {
 
         const title = data.title;
         const body = data.body;
+        const author = data.author.name;
+        const update = data.updated
         const mediaUrl = (data.media && data.media.url) ? data.media.url : ''; 
 
         const postDetailsDiv = document.getElementById('specificPost');
         postDetailsDiv.innerHTML =`
         <h2>${title}</h2>
         <p>${body}</p>
+        <p>Author: ${author}</p>
+        <p>Posted: ${update}</p>
         <img src="${mediaUrl}" alt="Post Image">
         `;
 
