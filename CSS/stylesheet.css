@@ -11,9 +11,13 @@ body{
   }
   
 
-h1{}
+h1, h2, h3{
+    font-size: 20px;
+}
 
-p{}
+p{
+    font-size: 15px;
+}
 
 
 /*****************
@@ -85,16 +89,20 @@ header > div{
 
 #posts{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    margin-top: 50px;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    justify-items: center;
+    align-content: center;
 }
 
 .singlePost{
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
+    width: 400px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -103,15 +111,26 @@ header > div{
     text-decoration: none;
     background-color: var(--ivory);
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.singlePost:hover{
+    transform: scale(1.1);
 }
 
 .singlePost > div{
     margin: 20px;
+    overflow: hidden;
 }
 
 .singlePost > div > img{
-    width: auto;
-    height: 200px;
+    max-width: auto;
+    height: 300px;
+
+}
+
+.postDetail{
+    max-width: 300px;
 }
 
 
