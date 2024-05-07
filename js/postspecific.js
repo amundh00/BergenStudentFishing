@@ -1,3 +1,16 @@
+function formatDate(dateString) {
+    const date = new Date(dateString);
+
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0'); 
+    const seconds = date.getSeconds().toString().padStart(2, '0');
+
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const queryParams = new URLSearchParams(window.location.search);
     const postId = queryParams.get('id');
@@ -25,29 +38,37 @@ function fetchPostDetails(postId) {
         const title = data.title;
         const body = data.body;
         const author = data.author.name;
-        const update = data.updated
+        const update = formatDate(data.updated); 
         const mediaUrl = (data.media && data.media.url) ? data.media.url : ''; 
 
         const postDetailsDiv = document.getElementById('specificPost');
         postDetailsDiv.innerHTML =`
-        <h2>${title}</h2>
-        <p>${body}</p>
-        <p>Author: ${author}</p>
-        <p>Posted: ${update}</p>
-        <img src="${mediaUrl}" alt="Post Image">
+        <div>
+            <h2>${title}</h2>
+            <p>${body}</p>
+            <p>Author: ${author}</p>
+            <p>Posted: ${update}</p>
+        </div>
+        <div>
+            <img src="${mediaUrl}" alt="Post Image">
+        </div>
         `;
 
         const accessToken = localStorage.getItem('accessToken');
     if (accessToken) {
-        // Create edit button
         const editButton = document.createElement('button');
         editButton.textContent = 'Edit';
         editButton.classList.add('cta-button2');
         editButton.addEventListener('click', () => {
-            console.log('Edit post:', data.id); // Log post ID for editing
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+            if (postId) {
+                window.location.href = `../post/edit.html?id=${postId}`; // Append postId to the URL
+            } else {
+                console.error('Post ID not found in URL');
+            }
         });
 
-        // Create delete button
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.classList.add('cta-button2');
@@ -61,8 +82,8 @@ function fetchPostDetails(postId) {
             });
         });
 
-        postDetailsDiv.appendChild(editButton);
-        postDetailsDiv.appendChild(deleteButton);
+        postButtons.appendChild(editButton);
+        postButtons.appendChild(deleteButton);
     }
 
     })
@@ -94,3 +115,6 @@ function deletePost(id) {
         });
     });
 }
+
+
+

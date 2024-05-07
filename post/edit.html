@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit a blog post</title>
+    <script src="../js/utils.js" defer></script>
+    <script src="../js/edit.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="../html/index.html">
+                <img id="header_img" src="/media/BSF_logo 1logo_BSF.png">
+            </a>
+            <div id="account">
+                
+            </div>
+        </div>
+    </header>
+   
+    <main>
+
+        <form id="editPost">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+            
+                <label for="body">Description:</label>
+                <div id="characterCount">0/2000</div>
+                <textarea id="body" name="body" maxlength="2000"></textarea>
+                
+                <label for="imageUrl">Image URL:</label>
+                <input type="text" id="imageUrl" name="imageUrl">
+                <label for="altText">Alt Text:</label>
+                <input type="text" id="altText" name="altText">
+                <button type="submit" value="Submit" class="cta-button2">Submit</button>
+        </form>
+        
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
