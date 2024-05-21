@@ -28,17 +28,18 @@ function authenticateUser(email, password) {
         const accessToken = responseData.data.accessToken;
         const userName = responseData.data.name
     
-        console.log('Access Token:', accessToken); 
+        //console.log('Access Token:', accessToken); 
     
         localStorage.setItem('accessToken', accessToken);
         localStorage.setItem('userName', userName)
     
-        console.log('Authentication successful');
-        window.location.href = '../html/index.html';
+        //console.log('Authentication successful');
+        window.location.href = '../index.html';
     })
     .catch(error => {
-        console.error('Authentication error:', error);
+        //console.error('Authentication error:', error);
+        alert("Kunne ikke authentisere login.");
     });
 }
 
-console.log('Local Storage:', localStorage.getItem('accessToken'));
+//console.log('Local Storage:', localStorage.getItem('accessToken'));

@@ -252,3 +252,69 @@ header > div{
     justify-content: center;
     align-items: center;
 }
+
+@media(max-width: 750px){
+
+    /*****************
+     Header
+    *****************/
+
+    header{
+        background-color: #008FAC;
+        height: 100%;
+        padding: 10px;
+    }
+
+    header > div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 40px 0 40px;
+    }
+
+    #header_img{
+        width: 150px;
+        height: auto;
+    }
+
+    #account{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*****************
+    Specific Post
+    *****************/
+
+    #specificPost{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #specificPost > div > p{
+        white-space: pre-wrap;
+    }
+
+    #specificPost > div{
+        margin: 50px;
+        max-width: 500px;
+    }
+
+    #specificPost > div > img{
+        max-width: 700px;
+        max-height: 600px;
+    }
+
+    #postButtons{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

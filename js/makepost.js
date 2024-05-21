@@ -1,5 +1,6 @@
 if (!accessToken) {
-    console.error('Access token not found in local storage');
+    //console.error('Fant ikke acces token i Local Storage');
+    alert("Du er ikke logget inn!");
 } else {
     const form = document.getElementById('lagPost');
 
@@ -35,12 +36,13 @@ if (!accessToken) {
             return response.json();
         })
         .then(data => {
-            console.log('Posten er lagt ut!', data);
+            //console.log('Posten er lagt ut!', data);
             form.reset();
-            window.location.href = '../html/index.html'
+            window.location.href = '../index.html'
         })
         .catch(error => {
-            console.error('Error submitting post:', error);
+            //console.error('Error submitting post:', error);
+            alert("En feil skjedde med postingen av innlegget.");
         });
     });
 }
