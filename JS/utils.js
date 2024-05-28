@@ -1,4 +1,4 @@
-// Check if the API key exists in local storage
+//Se etter APi key i Local storage
 const accessToken = localStorage.getItem('accessToken');
 const userName = localStorage.getItem('userName');
 
@@ -31,7 +31,6 @@ function showLogoutButton() {
         window.location.href = '../index.html';
     });
 
-    // Append the logout button to the 'account' div
     const accountDiv = document.getElementById('account');
     accountDiv.textContent = `Welcome, ${userName}!`;
     accountDiv.appendChild(logoutButton);

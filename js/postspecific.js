@@ -75,7 +75,7 @@ function fetchPostDetails(postId) {
         deleteButton.addEventListener('click', () => {
             deletePost(data.id)
             .then(()=> {
-                window.location.href = '../html/index.html';
+                window.location.href = '../index.html';
             })
             .catch(error => {
                 console.error('Kunne ikke slette Post', error);

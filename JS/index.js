@@ -15,7 +15,7 @@ fetch('https://v2.api.noroff.dev/blog/posts/amund_halgunset')
 
                 const postDiv = document.createElement('a');
                 postDiv.classList.add('singlePost');
-                postDiv.href = `blogpost.html?id=${id}`;
+                postDiv.href = `/html/blogpost.html?id=${id}`;
 
                 postDiv.innerHTML = `
                 <div class="postDetail">
@@ -35,5 +35,6 @@ fetch('https://v2.api.noroff.dev/blog/posts/amund_halgunset')
         }
     })
     .catch(error => {
-        console.error('Error fetching data:', error);
+        //console.error('Error fetching data:', error);
+        alert("Kunne ikke hente data fra server");
     });

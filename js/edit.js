@@ -18,7 +18,8 @@ function fetchPostDetails(postId) {
         form.elements['altText'].value = (postData.media && postData.media.alt) ? postData.media.alt : '';
     })
     .catch(error => {
-        console.error('Error fetching post details:', error);
+        //console.error('Error fetching post details:', error);
+        alert("Kunne ikke hente informasjon om blogposten");
     });
 }
 
@@ -29,7 +30,8 @@ const postId = urlParams.get('id');
 if (postId) {
     fetchPostDetails(postId);
 } else {
-    console.error('Post ID not found in URL');
+    //console.error('Post ID not found in URL');
+    alert("Fant ikke posten");
 }
 
 // vente på submit knappen
@@ -67,12 +69,14 @@ form.addEventListener('submit', function(event) {
         return response.json();
     })
     .then(data => {
-        console.log('Posten er oppdatert!', data);
+        //console.log('Posten er oppdatert!', data);
+        alert("Posten er oppdatert!");
         form.reset();
-        window.location.href = '../html/index.html'
+        window.location.href = '../index.html'
     })
     .catch(error => {
-        console.error('Error updating post:', error);
+        //console.error('Error updating post:', error);
+        alert("Kunne ikke redigere posten!");
     });
 });
 
