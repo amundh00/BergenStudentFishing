@@ -97,5 +97,6 @@ fetch('https://v2.api.noroff.dev/blog/posts/amund_halgunset')
         }
     })
     .catch(error => {
+        //Sender en feil til bruker om den ikke laster API
         alert("Kunne ikke hente data fra server");
     });
