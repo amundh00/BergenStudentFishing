@@ -31,14 +31,17 @@ fetch('https://v2.api.noroff.dev/blog/posts/amund_halgunset')
 
                 container.appendChild(postDiv);
 
-                // Add the latest 3 posts to the carousel
+                // legg til siste 3 poster til karusell
                 if (index < 3) {
                     const carouselItem = document.createElement('div');
                     carouselItem.classList.add('carouselItem');
 
                     carouselItem.innerHTML = `
                     <a href="/html/blogpost.html?id=${id}">
-                        <h2>${title}</h2>
+                        <div class="carouselInfo">
+                            <h2>${title}</h2>
+                            <p>Les Mere</p>
+                        </div>
                         <img src="${mediaUrl}" alt="Post Image">
                     </a>
                     `;
@@ -47,7 +50,7 @@ fetch('https://v2.api.noroff.dev/blog/posts/amund_halgunset')
                 }
             });
 
-            // Add event listeners for carousel navigation buttons
+            // eventlistner for knappene neste og forrige
             const prevButton = document.querySelector('.prev');
             const nextButton = document.querySelector('.next');
             let currentIndex = 0;
@@ -68,11 +71,31 @@ fetch('https://v2.api.noroff.dev/blog/posts/amund_halgunset')
                     item.style.display = index === currentIndex ? 'block' : 'none';
                 });
             }
+
+            // Starter alltid carusell på siste post
+            currentIndex = 0;
+            updateCarousel();
+
+            // bytter automatisk
+            let autoScroll = setInterval(() => {
+                nextButton.click();
+            }, 5000);
+
+            // eventlistner for å sjekke om musen hovrer over for og stoppe scroll
+            const carousel = document.getElementById('carousel');
+            carousel.addEventListener('mouseenter', () => {
+                clearInterval(autoScroll);
+            });
+
+            carousel.addEventListener('mouseleave', () => {
+                autoScroll = setInterval(() => {
+                    nextButton.click();
+                }, 5000);
+            });
         } else {
             throw new Error('Invalid response data format');
         }
     })
     .catch(error => {
-        //console.error('Error fetching data:', error);
         alert("Kunne ikke hente data fra server");
     });
