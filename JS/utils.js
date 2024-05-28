@@ -28,7 +28,7 @@ function showLogoutButton() {
     logoutButton.addEventListener('click', function() {
         localStorage.removeItem('accessToken');
         localStorage.removeItem('userName');
-        window.location.href = '../html/index.html';
+        window.location.href = '../index.html';
     });
 
     // Append the logout button to the 'account' div

@@ -210,6 +210,7 @@ header > div{
     width: 200px;
     padding: 5px;
     border-radius: 10px;
+    background-color: var(--inputBG);
     border: 0;
 }
 
@@ -218,6 +219,7 @@ header > div{
     width: 200px;
     padding: 5px;
     border-radius: 10px;
+    background-color: var(--inputBG);
     border: 0;
 }
 
