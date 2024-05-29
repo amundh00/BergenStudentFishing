@@ -2,6 +2,8 @@
 const accessToken = localStorage.getItem('accessToken');
 const userName = localStorage.getItem('userName');
 
+let slideshowCont = document.getElementById("carousel-container");
+
 if (accessToken == null) {
     showLoginButton();
 } else {
@@ -48,4 +50,4 @@ function showMakePostButton() {
 }
 
 
-console.log('Local Storage:', localStorage.getItem('accessToken'));
+console.log('Local Storage:', localStorage.getItem('accessToken'));       
