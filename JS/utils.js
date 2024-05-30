@@ -3,16 +3,6 @@ const userName = localStorage.getItem('userName');
 
 let slideshowCont = document.getElementById("carousel-container");
 
-// Create the blog link
-const blogLink = document.createElement('a');
-blogLink.textContent = 'Blog';
-blogLink.href = 'HTML/blog.html';
-blogLink.classList.add('cta-button2');
-
-// Always append the blog link
-const accountDiv = document.getElementById('account');
-accountDiv.appendChild(blogLink);
-
 if (accessToken == null) {
     showLoginButton();
 } else {
