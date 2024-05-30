@@ -14,10 +14,14 @@ body{
 
 h1, h2, h3{
     font-size: 30px;
+    padding: 0;
+    margin: 0;
 }
 
 p{
     font-size: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -30,7 +34,7 @@ p{
     border-radius: 10px;
     color: white;
     padding: 10px;
-    font-size: 15px;
+    font-size: 10px;
     margin: 10px;
     background-color: var(--mountainMeadow);
 }
@@ -47,7 +51,7 @@ p{
     border-radius: 10px;
     color: white;
     padding: 10px;
-    font-size: 15px;
+    font-size: 10px;
     margin: 10px;
     background-color: var(--daintree);
 }
@@ -78,8 +82,14 @@ header > div{
     margin: 0 40px 0 40px;
 }
 
+#account{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 #header_img{
-    width: 150px;
+    width: 50px;
     height: auto;
 }
 
@@ -91,7 +101,7 @@ header > div{
 #posts{
     display: grid;
     margin-top: 50px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
@@ -103,7 +113,7 @@ header > div{
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
-    width: 600px;
+    width: 300px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -126,7 +136,7 @@ header > div{
 
 .singlePost > div > img{
     max-width: auto;
-    height: 300px;
+    height: 200px;
 
 }
 
@@ -274,27 +284,17 @@ section {
     justify-content: center;
     overflow: hidden;
     height: 80vh;
-    width: 100vw; 
+    width: 100vw;
 }
 
 #carouselContainer{
-    width: 100vw; 
-}
-
-.carouselItem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;   
-    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 
 .carouselItem img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    height: auto;
 }
 
 .carouselInfo {
@@ -359,38 +359,15 @@ section {
     height: 100%;
 }
 
-
-
-@media(max-width: 750px){   
+@media (min-width: 750px){
 
     /*****************
-     Header
+          Index
     *****************/
 
-    header{
-        background-color: #008FAC;
-        height: 100%;
-        padding: 10px;
-    }
-
-    header > div{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 40px 0 40px;
-    }
-
     #header_img{
-        width: 50px;
+        width: 150px;
         height: auto;
-    }
-
-    #account{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
     }
 
     /*****************
@@ -398,131 +375,47 @@ section {
     *****************/
 
     .cta-button1{
-        font-size: 10px;
+        font-size: 15px;
     }
 
     .cta-button2{
-        font-size: 10px;
+        font-size: 15px;
     }
-
-    /*****************
-    Make post
-    *****************/
-
-    #lagPost > input{
-        height: 100%;
-        width: 300px;
-    }
-
-    #lagPost > textarea{
-        height: 400px;
-        width: 300px;
-    }
-
-    /*****************
-    edit Post
-    *****************/
-
-    #editPost > input{
-        height: 100%;
-        width: 300px;
-    }
-
-    #editPost > textarea{
-        height: 400px;
-        width: 300px;
-    }
-
-    /*****************
-        Login page
-    *****************/
-
-    #loginForm > input{
-        width: 200px;
-    }
-
-    #loginForm > textarea{
-        width: 200px;
-    }
-
-    /*****************
-    Specific Post
-    *****************/
-
-    #specificPost{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #specificPost > div > p{
-        white-space: pre-wrap;
-    }
-
-    #specificPost > div{
-        margin: 50px;
-        max-width: 500px;
-    }
-
-    #specificPost > div > img{
-        max-width: 700px;
-        max-height: 600px;
-    }
-
-    #postButtons{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-
-    #posts{
-        grid-template-columns: 1fr;
-    }
-
-    .singlePost{
-        width: 300px;
-    }
-
-    .singlePost > div > img{
-        height: 200px;
-    }
-
-}
-
-@media(max-width: 1350px){
 
     /*****************
       Index
     *****************/
 
     #posts{
+        display: grid;
+        margin-top: 50px;
         grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        justify-items: center;
+        align-content: center;
     }
 
     .singlePost{
-        width: 550px;
+        width: 500px;
     }
-    
-    .singlePost:hover{
-        transform: scale(1.02);
-    }
-    
-    .singlePost > div{
-        width: 70%;
-        margin: 20px;
-        overflow: hidden;
-    }
-    
+
     .singlePost > div > img{
         max-width: auto;
-        height: 400px;
+        height: 300px;
     }
-    
+
     .postDetail{
         max-width: 300px;
     }
 
+    section{
+        background-color: var(--ivory);
+    }
+
+}
+
+@media (min-width: 1350px){
+    
 }
