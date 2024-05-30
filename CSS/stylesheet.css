@@ -272,6 +272,14 @@ section{
      Carousel
 *****************/
 
+/*****************
+     Carousel
+*****************/
+
+/*****************
+     Carousel
+*****************/
+
 section {
     display: flex;
     justify-content: center;
@@ -283,18 +291,27 @@ section {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    height: 80vh;
+    height: 500px;
     width: 100vw;
 }
 
-#carouselContainer{
+#carouselContainer {
     width: 100vw;
-    height: 100vh;
+}
+
+.carouselItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .carouselItem img {
+    height: 100%;
     width: 100%;
-    height: auto;
+    object-fit: cover; 
+    object-position: center; 
 }
 
 .carouselInfo {
@@ -304,8 +321,8 @@ section {
     align-items: center;
     flex-direction: column;
     color: white;
-    top: 80%;
-    left: 35%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     padding: 15px;
     border-radius: .25rem;
@@ -347,7 +364,6 @@ section {
     padding: 0;
     display: flex;
     overflow: hidden;
-    object-position: center;
     width: 100%;
     margin: 0;
 }
@@ -357,7 +373,12 @@ section {
     box-sizing: border-box;
     transition: transform 0.5s ease-in-out;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
 
 @media (min-width: 750px){
 
@@ -417,5 +438,52 @@ section {
 }
 
 @media (min-width: 1350px){
+    /*****************
+      Index
+    *****************/
+
+    #posts{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .singlePost{
+        width: 500px;
+    }
+
+    .singlePost > div > img{
+        height: 400px;
+    }
+
+   /*****************
+     Carousel
+    *****************/
+
+    #carousel {
+        height: 900px;
+    }
+
+    .carouselInfo {
+        top: 50%;
+        left: 50%;
+    }
+
+    /*****************
+     Header
+    *****************/
+
+    #header_img{
+        width: 150px;
+        height: auto;
+    }
+
+    /*****************
+        CTA buttons
+    *****************/
+
+    .cta-button2{
+        font-size: 20px;
+    }
+
     
+
 }
