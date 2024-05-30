@@ -2,6 +2,7 @@ const accessToken = localStorage.getItem('accessToken');
 const userName = localStorage.getItem('userName');
 
 let slideshowCont = document.getElementById("carousel-container");
+let accountDiv = document.getElementById("account");
 
 if (accessToken == null) {
     showLoginButton();
