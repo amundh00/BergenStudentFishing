@@ -1,4 +1,3 @@
-// Function to fetch posts
 function fetchAndDisplayPosts() {
     fetch('https://v2.api.noroff.dev/blog/posts/amund_halgunset')
         .then(response => {

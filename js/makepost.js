@@ -37,6 +37,7 @@ if (!accessToken) {
         })
         .then(data => {
             //console.log('Posten er lagt ut!', data);
+            alert("Posten er lagt ut!");
             form.reset();
             window.location.href = '../index.html'
         })

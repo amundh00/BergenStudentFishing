@@ -1,6 +1,6 @@
 function formatDate(dateString) {
     const date = new Date(dateString);
-
+    //omgjøring av dato string
     const year = date.getFullYear();
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const day = date.getDate().toString().padStart(2, '0');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if(postId) {
         fetchPostDetails(postId);
     }   else {
-        console.error('Post Id ikke funnet i URL');
+        //console.error('Post Id ikke funnet i URL');
     }
 });
 
@@ -33,7 +33,7 @@ function fetchPostDetails(postId) {
     .then(responseData => {
         const data = responseData.data;
 
-        console.log('API Response:', data);
+        //console.log('API Response:', data);
 
         const title = data.title;
         const body = data.body;
@@ -65,7 +65,7 @@ function fetchPostDetails(postId) {
             if (postId) {
                 window.location.href = `../post/edit.html?id=${postId}`; // Append postId to the URL
             } else {
-                console.error('Post ID not found in URL');
+                //console.error('Post ID not found in URL');
             }
         });
 
@@ -78,7 +78,7 @@ function fetchPostDetails(postId) {
                 window.location.href = '../index.html';
             })
             .catch(error => {
-                console.error('Kunne ikke slette Post', error);
+                //console.error('Kunne ikke slette Post', error);
             });
         });
 
@@ -88,7 +88,8 @@ function fetchPostDetails(postId) {
 
     })
     .catch(error => {
-        console.error('Fikk ikke hentet blog post detaljer', error);
+        //console.error('Fikk ikke hentet blog post detaljer', error);
+        alert("Kan ikke hente blog post detaljer!,", error);
     });
 }
 
@@ -106,11 +107,11 @@ function deletePost(id) {
             if (!response.ok) {
                 throw new Error('Failed to delete post');
             }
-            console.log('Post deleted successfully');
+            //console.log('Post deleted successfully');
             resolve(); 
         })
         .catch(error => {
-            console.error('Error deleting post:', error);
+            //console.error('Error deleting post:', error);
             reject(error);
         });
     });
