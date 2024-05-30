@@ -16,12 +16,18 @@ h1, h2, h3{
     font-size: 30px;
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-p{
+p, a{
     font-size: 20px;
     padding: 0;
     margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+main{
+    margin: 0 5% 0 5%;
 }
 
 
@@ -92,11 +98,23 @@ header > div{
     width: 50px;
     height: auto;
 }
+/*****************
+       Blog
+*****************/
 
+#blogInfo{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
 
 /*****************
       Index
 *****************/
+
+#blogPostMain{
+    height: 100vh;
+}
 
 #posts{
     display: grid;
@@ -152,6 +170,10 @@ section{
     Make post
 *****************/
 
+#makePostMain{
+    height: 100vh;
+}
+
 #lagPost{
     display: flex;
     flex-direction: column;
@@ -161,7 +183,7 @@ section{
 
 #lagPost > input{
     height: 100%;
-    width: 500px;
+    width: 300px;
     padding: 5px;
     border-radius: 10px;
     background-color: var(--inputBG);
@@ -169,17 +191,29 @@ section{
 }
 
 #lagPost > textarea{
-    height: 200px;
-    width: 500px;
+    height: 300px;
+    width: 300px;
     padding: 5px;
     border-radius: 10px;
     background-color: var(--inputBG);
     border: 0;
 }
 
+#makePostInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 20px 0;
+}
+
 /*****************
     edit Post
 *****************/
+
+#editPostMain{
+    height: 100vh;
+}
 
 #editPost{
     display: flex;
@@ -209,6 +243,10 @@ section{
 /*****************
     Login page
 *****************/
+
+#loginMain{
+    height: 100vh;
+}
 
 #loginForm{
     display: flex;
@@ -242,7 +280,7 @@ section{
 
 #specificPost{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -252,13 +290,13 @@ section{
 }
 
 #specificPost > div{
-    margin: 50px;
-    max-width: 500px;
+    margin: 10px;
+    max-width: 400px;
 }
 
 #specificPost > div > img{
-    max-width: 700px;
-    max-height: 600px;
+    max-width: 300px;
+    max-height: auto;
 }
 
 #postButtons{
@@ -267,14 +305,6 @@ section{
     justify-content: center;
     align-items: center;
 }
-
-/*****************
-     Carousel
-*****************/
-
-/*****************
-     Carousel
-*****************/
 
 /*****************
      Carousel
@@ -303,6 +333,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 100%;
     width: 100%;
 }
@@ -327,6 +358,7 @@ section {
     padding: 15px;
     border-radius: .25rem;
     background-color: var(--daintree);
+    filter: drop-shadow(5px 5px 4px #000000);
 }
 
 .prev, .next {
@@ -378,6 +410,22 @@ section {
     align-items: center;
 }
 
+/****************
+     Footer
+****************/
+
+footer{
+    background-color: var(--bondiBlue);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer > div > h2{
+    margin: 15px;
+}
 
 
 @media (min-width: 750px){
@@ -389,6 +437,65 @@ section {
     #header_img{
         width: 150px;
         height: auto;
+    }
+
+    /*****************
+        Make post
+    *****************/
+
+    #lagPost{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #lagPost > input{
+        height: 100%;
+        width: 500px;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: var(--inputBG);
+        border: 0;
+    }
+
+    #lagPost > textarea{
+        height: 200px;
+        width: 500px;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: var(--inputBG);
+        border: 0;
+    }
+
+    /*****************
+       Login page
+    *****************/
+
+    #loginForm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #loginForm > input{
+        height: 100%;
+        width: 300px;
+        padding: 5px;
+        font-size: 15px;
+        border-radius: 10px;
+        background-color: var(--inputBG);
+        border: 0;
+    }
+
+    #loginForm > textarea{
+        height: 100%;
+        width: 300px;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: var(--inputBG);
+        border: 0;
     }
 
     /*****************
@@ -435,15 +542,36 @@ section {
         background-color: var(--ivory);
     }
 
+    /*****************
+       Specific Post
+    *****************/
+
+    #specificPost{
+        flex-direction: row;
+    }
+
+    #specificPost > div > img{
+        max-width: 350px;
+    }
+
 }
 
 @media (min-width: 1350px){
+
+    main{
+        margin: 0 5% 0 5%;
+    }
+
+    header> div{
+        margin: 0 5% 0 5%;
+    }
+
     /*****************
       Index
     *****************/
 
     #posts{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     .singlePost{
@@ -454,12 +582,20 @@ section {
         height: 400px;
     }
 
+    /*****************
+       Specific Post
+    *****************/
+
+    #specificPost > div > img{
+        max-width: 500px;
+    }
+
    /*****************
      Carousel
     *****************/
 
     #carousel {
-        height: 900px;
+        height: 700px;
     }
 
     .carouselInfo {
@@ -481,9 +617,12 @@ section {
     *****************/
 
     .cta-button2{
-        font-size: 20px;
+        font-size: 15px;
     }
+}
 
-    
-
+@media (min-width: 2000px){
+    #posts{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
