@@ -134,7 +134,9 @@ header > div{
     max-width: 300px;
 }
 
-
+section{
+    background-color: var(--ivory);
+}
 
 /*****************
     Make post
@@ -207,8 +209,9 @@ header > div{
 
 #loginForm > input{
     height: 100%;
-    width: 200px;
+    width: 300px;
     padding: 5px;
+    font-size: 15px;
     border-radius: 10px;
     background-color: var(--inputBG);
     border: 0;
@@ -216,7 +219,7 @@ header > div{
 
 #loginForm > textarea{
     height: 100%;
-    width: 200px;
+    width: 300px;
     padding: 5px;
     border-radius: 10px;
     background-color: var(--inputBG);
@@ -259,7 +262,7 @@ header > div{
      Carousel
 *****************/
 
-section{
+section {
     display: flex;
     justify-content: center;
 }
@@ -271,40 +274,43 @@ section{
     justify-content: center;
     overflow: hidden;
     height: 80vh;
-    width: 60vw; 
-  }
+    width: 100vw; 
+}
 
-.carouselItem{
+#carouselContainer{
+    width: 100vw; 
+}
+
+.carouselItem {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
     width: 100%;
     height: 100%;   
     overflow: hidden;
 }
 
-.carouselInfo{
+.carouselItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carouselInfo {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     color: white;
-    top: 50%;
+    top: 80%;
     left: 35%;
     transform: translate(-50%, -50%);
     padding: 15px;
     border-radius: .25rem;
     background-color: var(--daintree);
 }
-
-.carouselItem img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-  }
 
 .prev, .next {
     position: absolute;
@@ -328,11 +334,11 @@ section{
     cursor: pointer;
 }
 
-.prev{
+.prev {
     left: 1rem;
 }
 
-.next{
+.next {
     right: 1rem;
 }
 
@@ -342,17 +348,20 @@ section{
     display: flex;
     overflow: hidden;
     object-position: center;
-    width: 80%;
+    width: 100%;
     margin: 0;
 }
+
 .carouselItem > li {
     min-width: 100%;
     box-sizing: border-box;
     transition: transform 0.5s ease-in-out;
+    height: 100%;
 }
 
 
-@media(max-width: 750px){
+
+@media(max-width: 750px){   
 
     /*****************
      Header
@@ -373,7 +382,7 @@ section{
     }
 
     #header_img{
-        width: 150px;
+        width: 50px;
         height: auto;
     }
 
@@ -382,6 +391,58 @@ section{
         flex-direction: row;
         justify-content: center;
         align-items: center;
+    }
+
+    /*****************
+    CTA buttons
+    *****************/
+
+    .cta-button1{
+        font-size: 10px;
+    }
+
+    .cta-button2{
+        font-size: 10px;
+    }
+
+    /*****************
+    Make post
+    *****************/
+
+    #lagPost > input{
+        height: 100%;
+        width: 300px;
+    }
+
+    #lagPost > textarea{
+        height: 400px;
+        width: 300px;
+    }
+
+    /*****************
+    edit Post
+    *****************/
+
+    #editPost > input{
+        height: 100%;
+        width: 300px;
+    }
+
+    #editPost > textarea{
+        height: 400px;
+        width: 300px;
+    }
+
+    /*****************
+        Login page
+    *****************/
+
+    #loginForm > input{
+        width: 200px;
+    }
+
+    #loginForm > textarea{
+        width: 200px;
     }
 
     /*****************
@@ -414,6 +475,54 @@ section{
         flex-direction: row;
         justify-content: center;
         align-items: center;
+    }
+
+
+    #posts{
+        grid-template-columns: 1fr;
+    }
+
+    .singlePost{
+        width: 300px;
+    }
+
+    .singlePost > div > img{
+        height: 200px;
+    }
+
+}
+
+@media(max-width: 1350px){
+
+    /*****************
+      Index
+    *****************/
+
+    #posts{
+        grid-template-columns: 1fr;
+    }
+
+    .singlePost{
+        width: 550px;
+    }
+    
+    .singlePost:hover{
+        transform: scale(1.02);
+    }
+    
+    .singlePost > div{
+        width: 70%;
+        margin: 20px;
+        overflow: hidden;
+    }
+    
+    .singlePost > div > img{
+        max-width: auto;
+        height: 400px;
+    }
+    
+    .postDetail{
+        max-width: 300px;
     }
 
 }
